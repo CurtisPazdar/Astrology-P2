@@ -1,0 +1,26 @@
+<h1>Horoscope Time!!</h1>
+
+<ul>
+    {{#each horoscopes}}
+    {{#unless ascendent}}
+    {{> horoscopes/horoscope-block ascendent=true}}
+    {{/unless}}
+    {{/each}}
+</ul>
+
+<ul>
+    {{#each horoscopes}}
+    {{#unless ascendent}}
+    {{> horoscopes/horoscope-block ascendent=false}}
+    {{/unless}}
+    {{/each}}
+</ul>
+
+<h2>Enter your birthdate here</h2>
+<div class="ui category search">
+    <div class="ui icon input">
+        <input class="prompt" type="text" placeholder="Enter Birthdate">
+        <i class="search icon"></i>
+    </div>
+    <div class="results"></div>
+</div>
