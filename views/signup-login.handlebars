@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+create a js file that makes an ajax call to get the daily NASA space image
+save that image as a variable
+use handlebars to insert that variable as an image into the html sign-up document background
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $.ajax({
+            url: "https://api.nasa.gov/planetary/apod?api_key=OHbuGSB8c6bk2wTVFA5Kz29Nl2KJelGKXyA2OlXx",
+            method: "GET"
+        }).then(function (response) {
+            console.log(response.url);
+            {
+                imgEl: response.url
+            }
+        });
+    </script>
+    <img src={{imgEl}}><img>
+</body>
+
+</html>
