@@ -16,9 +16,11 @@ use handlebars to insert that variable as an image into the html sign-up documen
 
 <body>
     <h1>Login</h1>
-    {{#if error}}
-    <div class="alert error-message">{{message}}</div>
+    {{!-- if statement renders error messages from login failures --}}
+    {{#if messages.error}}
+    <div class="alert error-message">{{messages.error}}</div>
     {{/if}}
+
     <form action="/login" method="POST">
         <div>
             <label for="email">Name</label>

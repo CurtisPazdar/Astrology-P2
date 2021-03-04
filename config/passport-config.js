@@ -31,7 +31,6 @@ function initialize(passport, user) {
           },
         })
           .then(function (user) {
-            console.log(user);
             if (!user) {
               return done(null, false, {
                 message: "Email does not exist",
@@ -58,7 +57,6 @@ function initialize(passport, user) {
       }
     )
   );
-  console.log(User);
   //serialize
   passport.serializeUser(function (User, done) {
     done(null, { id: User.id, email: User.email });

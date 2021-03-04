@@ -16,6 +16,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
+
+    birthdate: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
   });
   return User;
 };

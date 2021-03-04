@@ -30,10 +30,14 @@ module.exports = (app) => {
   app.post("/register", async (req, res) => {
     try {
       const hashedPassword = await bcrypt.hash(req.body.password, 10);
+      const birthdate = parseInt(
+        req.body.dayofbirth + req.body.monthofbirth + req.body.yearofbirth
+      );
       db.User.create({
         name: req.body.name,
         email: req.body.email,
         password: hashedPassword,
+        birthdate: birthdate,
       });
       res.redirect("/login");
     } catch {
