@@ -3,23 +3,8 @@ const bcrypt = require("bcrypt");
 const db = require("../models");
 const passport = require("passport");
 
-function initialize(passport, user, findById) {
+function initialize(passport, user) {
   let User = user;
-  const authenticateUser = async (email, password, done) => {
-    const user = getUserByEmail(email);
-    if (user == null) {
-      return done(null, false, { message: "No user was found" });
-    }
-    try {
-      if (await bcrypt.compare(password, user.password)) {
-        return done(null, user);
-      } else {
-        return done(null, false, { message: "Password Incorrect" });
-      }
-    } catch (err) {
-      return done(err);
-    }
-  };
 
   passport.use(
     new LocalStrategy(
@@ -78,7 +63,7 @@ function initialize(passport, user, findById) {
   passport.serializeUser(function (User, done) {
     done(null, { id: User.id, email: User.email });
   });
-
+  //deserialize
   passport.deserializeUser(function (User, done) {
     done(null, { id: User.id, email: User.email });
   });

@@ -1,4 +1,3 @@
-const path = require("path");
 const db = require("../models");
 const bcrypt = require("bcrypt");
 const passport = require("passport");
