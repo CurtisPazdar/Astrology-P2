@@ -43,5 +43,3 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 module.exports = db;
-//needs orm info
-const connection = require("./connec");
