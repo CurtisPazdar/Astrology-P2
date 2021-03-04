@@ -2,9 +2,9 @@
 <html lang="en">
 
 
-create a js file that makes an ajax call to get the daily NASA space image
+{{!-- create a js file that makes an ajax call to get the daily NASA space image
 save that image as a variable
-use handlebars to insert that variable as an image into the html sign-up document background
+use handlebars to insert that variable as an image into the html sign-up document background --}}
 
 
 <head>
@@ -15,6 +15,23 @@ use handlebars to insert that variable as an image into the html sign-up documen
 </head>
 
 <body>
+    <h1>Login</h1>
+    {{#if error}}
+    <div class="alert error-message">{{message}}</div>
+    {{/if}}
+    <form action="/login" method="POST">
+        <div>
+            <label for="email">Name</label>
+            <input type="email" name="email" id="email" required>
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" required>
+        </div>
+        <button type="submit">Login</button>
+    </form>
+    <a href="/register">Register</a>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
         $.ajax({
