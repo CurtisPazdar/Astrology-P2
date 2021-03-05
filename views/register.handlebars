@@ -25,3 +25,14 @@
         </div>
     </div>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $.ajax({
+        url: "https://api.nasa.gov/planetary/apod?api_key=OHbuGSB8c6bk2wTVFA5Kz29Nl2KJelGKXyA2OlXx",
+        method: "GET"
+    }).then(function (response) {
+        console.log(response.url);
+        document.body.style.backgroundImage = `url(\'${response.url}\')`;
+    })
+</script>
