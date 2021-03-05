@@ -1,7 +1,8 @@
-module.exports = function(sequelize, Datatypes) {
-  var Post = sequelize.define("Post", {
+module.exports = function (sequelize, DataTypes) {
+  const Post = sequelize.define("Post", {
     body: {
-        type: DataTypes.STRING
-    }
-  })
-}
+      type: DataTypes.STRING,
+    },
+  });
+  return Post;
+};
