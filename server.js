@@ -42,7 +42,7 @@ app.set("view engine", "handlebars");
 const routes = require("./controller/horoscopeController.js");
 
 passportRouter(app);
-//app.use(routes);
+// app.use(routes);
 
 // Start our server so that it can begin listening to client requests.
 db.sequelize.sync().then(() => {
