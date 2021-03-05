@@ -4,10 +4,10 @@ const router = express.Router();
 
 const horoscope = require("../models/index.js");
 
-var userId = "615899";
-var apiKey = "8d7a9a179b563db728b3e2c7fabdb85a";
-var data = "JSON Request Data";
-var request = $.ajax({
+const userId = "615899";
+const apiKey = "8d7a9a179b563db728b3e2c7fabdb85a";
+const data = "JSON Request Data";
+const request = $.ajax({
   url: "https://json.astrologyapi.com/v1/" + api,
   method: "POST",
   dataType: "json",
@@ -26,3 +26,5 @@ return request.then(
     return err;
   }
 );
+
+
