@@ -2,6 +2,7 @@ const db = require("../models");
 const bcrypt = require("bcrypt");
 const passport = require("passport");
 
+
 const initializePassport = require("../config/passport-config");
 initializePassport(passport);
 
