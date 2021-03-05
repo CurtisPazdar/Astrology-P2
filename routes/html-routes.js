@@ -1,9 +1,6 @@
 
 
 module.exports = function(app) {
-	app.get("/", function(req, res) {
-	    res.render("register");
-	});
 
 	app.get("/messageboard/", function(req, res) {
 		var query = {};
