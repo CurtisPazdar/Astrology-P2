@@ -4,7 +4,7 @@
 <form action="/logout?_method=DELETE" method="POST">
 
 </form>
-<h1>Horoscope Time!!</h1>
+<h1>What's your sign?!</h1>
 
 
 
@@ -26,7 +26,7 @@
 
 <body>
 
-    <h2 style="font-size: 30px">Enter your birthdate here</h2>
+    <h2 style="font-size: 30px">Enter your Zodiac sign below to receive your daily horoscope:</h2>
     <nav>
         <div class="nav-wrapper">
             <form>
@@ -38,7 +38,8 @@
             </form>
         </div>
     </nav>
-    <button type="submit">Logout</button>
+    <button type="logout">Logout</button>
+    <a href="../views/index.handlebars"></a>
 
     <script type="text/javascript">
         fetch("https://json.astrologyapi.com/v1/sun_sign_prediction/daily/:zodiacName", {
@@ -55,5 +56,5 @@
             .catch(error => console.log('ERROR'))
 
     </script>
-    <a href="...../public/assets/horoscope.js"></a>
+    <a href="../public/assets/horoscope.js"></a>
 </body>
