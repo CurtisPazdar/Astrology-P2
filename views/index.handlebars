@@ -1,33 +1,59 @@
-<h1>Horoscope Time!!</h1>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+<h1 style="font-size: 30px">Horoscope Time!!</h1>
 <form action="/logout?_method=DELETE" method="POST">
-    <button type="submit">Logout</button>
+
 </form>
+<h1>Horoscope Time!!</h1>
+
+
 
 <ul>
     {{#each horoscopes}}
-    {{#unless ascendent}}
-    {{> horoscopes/horoscope-block ascendent=true}}
+    {{#unless daily}}
+    {{> horoscopes/horoscope-block daily=true}}
     {{/unless}}
     {{/each}}
 </ul>
 
 <ul>
     {{#each horoscopes}}
-    {{#unless ascendent}}
-    {{> horoscopes/horoscope-block ascendent=false}}
+    {{#unless daily}}
+    {{> horoscopes/horoscope-block daily=false}}
     {{/unless}}
     {{/each}}
 </ul>
 
-<h2>Enter your birthdate here</h2>
-<nav>
-    <div class="nav-wrapper">
-        <form>
-            <div class="input-field">
-                <input id="search" type="search" required>
-                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                <i class="material-icons">close</i>
-            </div>
-        </form>
-    </div>
-</nav>
+<body>
+
+    <h2 style="font-size: 30px">Enter your birthdate here</h2>
+    <nav>
+        <div class="nav-wrapper">
+            <form>
+                <div class="input-field">
+                    <input id="search" type="search" required>
+                    <label class="label-icon" for="search"><i class="material-icons"></i></label>
+                    <i class="material-icons">search</i>
+                </div>
+            </form>
+        </div>
+    </nav>
+    <button type="submit">Logout</button>
+
+    <script type="text/javascript">
+        fetch("https://json.astrologyapi.com/v1/sun_sign_prediction/daily/:zodiacName", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                horoscope: 'url',
+            })
+        }).then(res => {
+            return res.json()
+        }).then(data => console.log(data))
+            .catch(error => console.log('ERROR'))
+
+    </script>
+    <a href="...../public/assets/horoscope.js"></a>
+</body>

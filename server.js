@@ -1,6 +1,6 @@
-if (process.env.NODE_ENV !== "production") {
-  require("dotenv").config();
-}
+// if (process.env.NODE_ENV !== "production") {
+//   require("dotenv").config();
+// }
 
 const express = require("express");
 const session = require("express-session");
@@ -8,6 +8,7 @@ const PORT = process.env.PORT || 8080;
 const app = express();
 const passport = require("passport");
 const passportRouter = require("./routes/auth-routes.js");
+const messageBoardRouter = require("./routes/html-routes");
 const methodOverride = require("method-override");
 const db = require("./models");
 const flash = require("express-flash");
@@ -42,7 +43,8 @@ app.set("view engine", "handlebars");
 const routes = require("./controller/horoscopeController.js");
 
 passportRouter(app);
-//app.use(routes);
+messageBoardRouter(app);
+// app.use(routes);
 
 // Start our server so that it can begin listening to client requests.
 db.sequelize.sync().then(() => {
