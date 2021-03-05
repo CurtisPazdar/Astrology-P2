@@ -30,14 +30,12 @@ module.exports = (app) => {
   app.post("/register", async (req, res) => {
     try {
       const hashedPassword = await bcrypt.hash(req.body.password, 10);
-      const birthdate = parseInt(
-        req.body.dayofbirth + req.body.monthofbirth + req.body.yearofbirth
-      );
+      let birthdate = parseInt(req.body.monthofbirth + req.body.dayofbirth);
       db.User.create({
         name: req.body.name,
         email: req.body.email,
         password: hashedPassword,
-        birthdate: birthdate,
+        birthSign: renderSign(birthdate),
       });
       res.redirect("/login");
     } catch {
@@ -62,5 +60,34 @@ module.exports = (app) => {
       res.redirect("/");
     }
     next();
+  }
+};
+
+const renderSign = (birthdate) => {
+  console.log(birthdate);
+  if (321 <= birthdate && birthdate <= 419) {
+    return "Aries";
+  } else if (420 <= birthdate && birthdate <= 520) {
+    return "Taurus";
+  } else if (521 <= birthdate && birthdate <= 620) {
+    return "Gemini";
+  } else if (621 <= birthdate && birthdate <= 722) {
+    return "Cancer";
+  } else if (723 <= birthdate && birthdate <= 822) {
+    return "Leo";
+  } else if (823 <= birthdate && birthdate <= 922) {
+    return "Virgo";
+  } else if (923 <= birthdate && birthdate <= 1022) {
+    return "Libra";
+  } else if (1023 <= birthdate && birthdate <= 1121) {
+    return "Scorpio";
+  } else if (1122 <= birthdate && birthdate <= 1221) {
+    return "Sagittarius";
+  } else if (120 <= birthdate && birthdate <= 218) {
+    return "Aquarius";
+  } else if (219 <= birthdate && birthdate <= 320) {
+    return "Pisces";
+  } else {
+    return "Capricorn";
   }
 };
