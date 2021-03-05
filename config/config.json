@@ -1,16 +1,16 @@
 {
   "development": {
     "username": "root",
-    "password": "Joxer The Mighty104511",
+    "password": "root",
     "database": "astrology_db",
     "host": "127.0.0.1",
-    "port": 3306,
+    "port": 8889,
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
     "password": "root",
-    "database": "database_test",
+    "database": "astrology_db",
     "host": "127.0.0.1",
     "port": 8889,
     "dialect": "mysql"
@@ -18,7 +18,7 @@
   "production": {
     "username": "root",
     "password": "root",
-    "database": "database_production",
+    "database": "astrology_db",
     "host": "127.0.0.1",
     "port": 8889,
     "dialect": "mysql"
