@@ -1,7 +1,11 @@
 {
   "development": {
     "username": "root",
+<<<<<<< HEAD
     "password": "root",
+=======
+    "password": "aRlo41ba",
+>>>>>>> main
     "database": "astrology_db",
     "host": "127.0.0.1",
     "port": 8889,
