@@ -3,9 +3,9 @@ const mysql = require('mysql');
 
 const connection = mysql.createConnection({
   host: 'localhost',
-  port: 8889,
+  port: 3306,
   user: 'root',
-  password: 'root',
+  password: 'aRlo41ba',
   database: 'astrology_db',
 });
 
