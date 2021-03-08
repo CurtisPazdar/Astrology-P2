@@ -39,14 +39,4 @@ module.exports = function (app) {
       res.json(dbPost);
     });
   });
-
-  console.log(req.user.id);
-  console.log(req.body);
-
-  db.Post.create({
-    body: req.body.body,
-    id: req.user.id,
-  }).then(function (dbPost) {
-    res.json(dbPost);
-  });
 };
