@@ -16,11 +16,8 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": "root",
-    "database": "astrology_db",
-    "host": "127.0.0.1",
-    "port": 8889,
+    "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
   }
 }
+
