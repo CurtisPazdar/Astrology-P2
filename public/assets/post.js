@@ -7,7 +7,10 @@ $(document).ready(function(){
     var postBodyInput = $("#post-body");
     
 
-    $("#post-submit").on("click", function() {
+    $("#post-submit").on("click", function(e) {
+        
+        e.preventDefault();
+
         
 
         console.log("button was clicked")
