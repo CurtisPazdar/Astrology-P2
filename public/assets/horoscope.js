@@ -17,7 +17,7 @@ const request = $.ajax({
   },
   data: JSON.stringify(data),
 });
-// Returns A promiss
+// Returns A promise
 return request.then(
   function (resp) {
     return resp;
