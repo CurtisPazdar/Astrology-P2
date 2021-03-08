@@ -1,8 +1,11 @@
 const app = require("express");
 var db = require("../models");
 
+$(document).ready(function () {
+  var postBodyInput = $("#post-body");
 
-$(document).ready(function(){
+  $("#post-submit").on("click", function () {
+    console.log("button was clicked");
 
     var postBodyInput = $("#post-body");
     
@@ -19,21 +22,20 @@ $(document).ready(function(){
             return;
         }
 
-        var newPost = {
-            body: postBodyInput.val().trim(),
-            userId: userId
-        }
 
-        console.log(newPost);
+    var newPost = {
+      body: postBodyInput.val().trim(),
+      userId: userId,
+    };
 
-        submitPost(newPost);
+    console.log(newPost);
 
+    submitPost(newPost);
+  });
+
+  function submitPost(Post) {
+    app.post("/api/posts/", Post, function () {
+      location.reload();
     });
-
-    function submitPost(Post) {
-        app.post("/api/posts/",Post, function() {
-            location.reload();
-        });
-
-    }
-})
+  }
+});

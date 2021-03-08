@@ -12,6 +12,12 @@ body {
 * .nav-wrapper {
   color: white !important;
 }
+.loginTitle {
+  display: inline-block;
+  position: relative;
+  top: 50px;
+  font-size: 25px;
+}
 .title {
   background-color: lightblue;
 }
@@ -21,8 +27,21 @@ body {
   background-size: cover;
 }
 /* footer called from signup-login page - photo credit to NASA */
-footer {
-  color: black;
+.credit {
+  display: inline-block;
+  position: relative;
+  left: 29px;
+  font-size: 10px;
+}
+
+#logoutBtn {
+  display: block;
+  float: right;
+}
+
+#dailyHoroscope {
+  color: white;
+  font-size: 30px;
 }
 /* media query - shrinking font size on smaller devices - !important forces the call to override everything else */
 @media screen and (min-width: 200px) and (max-width: 734px) {

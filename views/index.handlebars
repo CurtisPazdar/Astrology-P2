@@ -1,6 +1,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 <link rel="stylesheet" href="../public/assets/style.css">
 
+{{!-- this controls the logout function of the logout button --}}
+<form action="/logout?_method=delete" method="POST"><button type="submit" id="logoutBtn">Logout</button></form>
+
 <h1 style="font-size: 30px">Horoscope Time!!</h1>
 <form action="/logout?_method=DELETE" method="POST">
 
@@ -32,29 +35,42 @@
         <div style="white" class="nav-wrapper">
             <form>
                 <div class="input-field">
-                    <input id="search" type="search" required>
-                    <label class="label-icon" for="search"><i class="material-icons"></i></label>
-                    <i class="material-icons">search</i>
+                    <input type="TEXT" id="sign" required>
                 </div>
             </form>
         </div>
     </nav>
-    <button style="color:white" type="logout">Logout</button>
-    <a href="../views/index.handlebars"></a>
+    <button type="submit" id="getHoro">Submit</button>
+    <div class="container">
+        <p id="dailyHoroscope"></p>
+    </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
-        fetch("https://json.astrologyapi.com/v1/sun_sign_prediction/daily/:zodiacName", {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                horoscope: 'url',
-            })
-        }).then(res => {
-            return res.json()
-        }).then(data => console.log(data))
-            .catch(error => console.log('ERROR'))
+        const sign = $("#sign").val()
+
+        const getDaily = () => {
+            const sign = $("#sign").val().trim()
+            console.log(sign)
+            $.ajax({
+                url: "https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=" + `${sign}` + "&day=today",
+                method: "POST",
+                dataType: "json",
+                headers: {
+                    "x-rapidapi-key": "176601b113msh6d27a4156a2d79bp177199jsna0ce92f9cd8c",
+                    "x-rapidapi-host": "sameer-kumar-aztro-v1.p.rapidapi.com",
+                    "Content-Type": "application/json",
+                },
+            }).then(function (response) {
+                console.log(response);
+                $("#dailyHoroscope").text(response.description)
+            });
+        }
+
+        $("#getHoro").on("click", function () {
+            event.preventDefault()
+            getDaily()
+        })
     </script>
-    <a href="../public/assets/horoscope.js"></a>
+
 </body>
