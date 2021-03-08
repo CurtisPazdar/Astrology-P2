@@ -1,36 +1,29 @@
 const app = require("express");
 var db = require("../models");
 
+$(document).ready(function () {
+  var postBodyInput = $("#post-body");
 
-$(document).ready(function(){
+  $("#post-submit").on("click", function () {
+    console.log("button was clicked");
 
-    var postBodyInput = $("#post-body");
-    
-
-    $("#post-submit").on("click", function() {
-        
-
-        console.log("button was clicked")
-
-        if (!postBodyInput.val().trim()) {
-            return;
-        }
-
-        var newPost = {
-            body: postBodyInput.val().trim(),
-            userId: userId
-        }
-
-        console.log(newPost);
-
-        submitPost(newPost);
-
-    });
-
-    function submitPost(Post) {
-        app.post("/api/posts/",Post, function() {
-            location.reload();
-        });
-
+    if (!postBodyInput.val().trim()) {
+      return;
     }
-})
+
+    var newPost = {
+      body: postBodyInput.val().trim(),
+      userId: userId,
+    };
+
+    console.log(newPost);
+
+    submitPost(newPost);
+  });
+
+  function submitPost(Post) {
+    app.post("/api/posts/", Post, function () {
+      location.reload();
+    });
+  }
+});

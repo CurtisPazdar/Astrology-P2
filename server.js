@@ -26,8 +26,8 @@ app.use(flash());
 app.use(
   session({
     secret: "keyboard cat",
-    resave: false,
-    saveUnitialized: false,
+    resave: true,
+    saveUnitialized: true,
   })
 );
 app.use(passport.initialize());
