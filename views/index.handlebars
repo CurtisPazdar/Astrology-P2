@@ -35,24 +35,25 @@
         <div style="white" class="nav-wrapper">
             <form>
                 <div class="input-field">
-                    <input id="search" type="search" required>
-                    <label class="label-icon" for="search"><i class="material-icons"></i></label>
-                    <i class="material-icons">search</i>
+                    <input type="TEXT" id="sign" required>
                 </div>
             </form>
         </div>
     </nav>
+    <button type="submit" id="getHoro">Submit</button>
     <div class="container">
         <p id="dailyHoroscope"></p>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
-
+        const sign = $("#sign").val()
 
         const getDaily = () => {
+            const sign = $("#sign").val().trim()
+            console.log(sign)
             $.ajax({
-                url: "https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=" + `${search.value}` + "&day=today",
+                url: "https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=" + `${sign}` + "&day=today",
                 method: "POST",
                 dataType: "json",
                 headers: {
@@ -62,10 +63,14 @@
                 },
             }).then(function (response) {
                 console.log(response);
+                $("#dailyHoroscope").text(response.description)
             });
         }
 
-        //$("#search").on("click", getDaily)
+        $("#getHoro").on("click", function () {
+            event.preventDefault()
+            getDaily()
+        })
     </script>
 
 </body>

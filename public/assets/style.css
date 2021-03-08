@@ -29,6 +29,11 @@ footer {
   display: block;
   float: right;
 }
+
+#dailyHoroscope {
+  color: white;
+  font-size: 30px;
+}
 /* media query - shrinking font size on smaller devices - !important forces the call to override everything else */
 @media screen and (min-width: 200px) and (max-width: 734px) {
   h1,
