@@ -5,7 +5,7 @@ module.exports = function (app) {
     res.render("index.handlebars");
   });
 
-  app.get("/message/", function (req, res) {
+  app.get("/message", function (req, res) {
     var query = {};
     db.Post.findAll({
       where: query,
@@ -26,31 +26,6 @@ module.exports = function (app) {
         user: req.user,
       };
 
-      res.render("message", hbsObject);
-    });
-  });
-
-  app.get("/message/:birthSign", function (req, res) {
-    db.Post.findAll({
-      where: {
-        birthSign: req.params.birthSign,
-      },
-      order: [
-        ["createdAt", "DESC"],
-        [db.Comment, "createdAt", "ASC"],
-      ],
-      include: [
-        db.User,
-        {
-          model: db.Comment,
-          include: [db.User],
-        },
-      ],
-    }).then((posts) => {
-      var hbsObject = {
-        hbPosts: posts,
-        user: req.user,
-      };
       res.render("message", hbsObject);
     });
   });

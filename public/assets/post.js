@@ -7,9 +7,21 @@ $(document).ready(function () {
   $("#post-submit").on("click", function () {
     console.log("button was clicked");
 
-    if (!postBodyInput.val().trim()) {
-      return;
-    }
+    var postBodyInput = $("#post-body");
+    
+
+    $("#post-submit").on("click", function(e) {
+        
+        e.preventDefault();
+
+        
+
+        console.log("button was clicked")
+
+        if (!postBodyInput.val().trim()) {
+            return;
+        }
+
 
     var newPost = {
       body: postBodyInput.val().trim(),

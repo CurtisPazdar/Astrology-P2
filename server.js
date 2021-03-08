@@ -12,6 +12,7 @@ const messageBoardRouter = require("./routes/html-routes");
 const methodOverride = require("method-override");
 const db = require("./models");
 const flash = require("express-flash");
+const postRouter = require("./routes/post-routes")
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
@@ -28,6 +29,7 @@ app.use(
     secret: "keyboard cat",
     resave: true,
     saveUnitialized: true,
+
   })
 );
 app.use(passport.initialize());
@@ -44,7 +46,7 @@ const routes = require("./controller/horoscopeController.js");
 
 passportRouter(app);
 messageBoardRouter(app);
-// app.use(routes);
+postRouter(app);
 
 // Start our server so that it can begin listening to client requests.
 db.sequelize.sync().then(() => {
