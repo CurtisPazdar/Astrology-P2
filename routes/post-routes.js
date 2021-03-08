@@ -3,7 +3,9 @@ const app = require("express");
 
 module.exports = function(app) {
 
+
     app.get("/message", function(req, res) {
+
         console.log("/api/posts call made");
         var query = {};
         if (req.query.user_id) {

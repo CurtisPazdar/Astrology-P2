@@ -1,6 +1,7 @@
 const app = require("express");
 var db = require("../models");
 
+
 $(document).ready(function () {
   var postBodyInput = $("#post-body");
 
@@ -9,6 +10,7 @@ $(document).ready(function () {
 
     var postBodyInput = $("#post-body");
     
+
 
     $("#post-submit").on("click", function(e) {
         
@@ -21,7 +23,6 @@ $(document).ready(function () {
         if (!postBodyInput.val().trim()) {
             return;
         }
-
 
     var newPost = {
       body: postBodyInput.val().trim(),
@@ -39,3 +40,4 @@ $(document).ready(function () {
     });
   }
 });
+
