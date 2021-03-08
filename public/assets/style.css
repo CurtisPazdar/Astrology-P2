@@ -6,7 +6,7 @@ h2 {
 }
 /* body calling from index.handlebar page */
 body {
-  background-image: url(https://images.unsplash.com/photo-1595088402198-24d44e48d57c?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzR8fHNwYWNlfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
+  background-image: url(https://images.unsplash.com/photo-1487235829740-e0ac5a286e1c?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NTR8fHNwYWNlfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
   background-size: cover;
 }
 * .nav-wrapper {
