@@ -1,53 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 {{!-- create a js file that makes an ajax call to get the daily NASA space image
 save that image as a variable
 use handlebars to insert that variable as an image into the html sign-up document background --}}
 
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
+    <link rel="stylesheet" href="../public/assets/style.css">
+
 </head>
 
 <body>
-    <h1>Login</h1>
-    {{!-- if statement renders error messages from login failures --}}
-    {{#if messages.error}}
-    <div class="alert error-message">{{messages.error}}</div>
-    {{/if}}
 
-    <form action="/login" method="POST">
-        <div>
-            <label for="email">Name</label>
-            <input type="email" name="email" id="email" required>
-        </div>
-        <div>
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" required>
-        </div>
-        <button type="submit">Login</button>
-    </form>
-    <a href="/register">Register</a>
 
-    {{!--
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript">
-        $.ajax({
-            url: "https://api.nasa.gov/planetary/apod?api_key=OHbuGSB8c6bk2wTVFA5Kz29Nl2KJelGKXyA2OlXx",
-            method: "GET"
-        }).then(function (response) {
-            console.log(response.url);
-            {
-                imgEl: response.url
-            }
-        });
-    </script>
-    <img src={{imgEl}}><img> --}}
+    <div class="row">
+        <div style="padding: 30px 30px 30px;" class="column-md-6 center">
+            <div class="card">
+                <div class="card-content white-text">
+                    <h4 class="card-title" style="color:black;">Daily Horoscope Web Application</h4>
+                    <h3 class="card-title" style="color:black;">Login</h3>
+                    {{#if error}}
+                    <div class="alert error-message">{{message}}</div>
+                    {{/if}}
+                    <form action="/login" method="POST">
+                        <div>
+                            <label for="email">Name</label>
+                            <input type="email" name="email" id="email" required>
+                        </div>
+                        <div>
+                            <label for="password">Password</label>
+                            <input type="password" name="password" id="password" required>
+                        </div>
+                        <button type="submit">Login</button>
+                    </form>
+                    <a href="/register">Register</a>
+                </div>
+            </div>
+        </div>
+
+        <footer>Photo credit: NASA</footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $.ajax({
+                url: "https://api.nasa.gov/planetary/apod?api_key=OHbuGSB8c6bk2wTVFA5Kz29Nl2KJelGKXyA2OlXx",
+                method: "GET"
+            }).then(function (response) {
+                console.log(response.url);
+                document.body.style.backgroundImage = `url(\'${response.url}\')`;
+            })
+        </script>
+    </div>
 </body>
 
 </html>

@@ -1,10 +1,14 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link rel="stylesheet" href="../public/assets/style.css">
+
+{{!-- this controls the logout function of the logout button --}}
+<form action="/logout?_method=delete" method="POST"><button type="submit" id="logoutBtn">Logout</button></form>
 
 <h1 style="font-size: 30px">Horoscope Time!!</h1>
 <form action="/logout?_method=DELETE" method="POST">
 
 </form>
-<h1>Horoscope Time!!</h1>
+<h1 style="font-size: 30px;">What's your sign?!</h1>
 
 
 
@@ -26,9 +30,9 @@
 
 <body>
 
-    <h2 style="font-size: 30px">Enter your birthdate here</h2>
+    <h2 style="font-size: 30px">Enter your Zodiac sign below to receive your daily horoscope:</h2>
     <nav>
-        <div class="nav-wrapper">
+        <div style="white" class="nav-wrapper">
             <form>
                 <div class="input-field">
                     <input id="search" type="search" required>
@@ -38,13 +42,17 @@
             </form>
         </div>
     </nav>
-    <button type="submit">Logout</button>
+    <div class="container">
+        <p id="dailyHoroscope"></p>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
 
+
         const getDaily = () => {
             $.ajax({
-                url: "https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=aquarius&day=today",
+                url: "https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=" + `${search.value}` + "&day=today",
                 method: "POST",
                 dataType: "json",
                 headers: {
@@ -56,6 +64,8 @@
                 console.log(response);
             });
         }
+
+        //$("#search").on("click", getDaily)
     </script>
 
 </body>
