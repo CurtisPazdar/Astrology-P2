@@ -7,25 +7,14 @@ $(document).ready(function () {
   $("#post-submit").on("click", function () {
     console.log("button was clicked");
 
-    var postBodyInput = $("#post-body");
-    
+    if (!postBodyInput.val().trim()) {
+      return;
+    }
 
-    $("#post-submit").on("click", function(e) {
-        
-        e.preventDefault();
-
-        
-
-        console.log("button was clicked")
-
-        if (!postBodyInput.val().trim()) {
-            return;
-        }
-
-
+    console.log();
     var newPost = {
       body: postBodyInput.val().trim(),
-      userId: userId,
+      userId: req.user.id,
     };
 
     console.log(newPost);
