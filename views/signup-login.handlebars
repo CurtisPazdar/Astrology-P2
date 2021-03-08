@@ -11,13 +11,18 @@ use handlebars to insert that variable as an image into the html sign-up documen
 </head>
 
 <body>
-
+    <div class="row">
+        <center>
+            <div class="column-md-6 center card-panel white lighten-2 loginTitle card-title">
+                Horoscope Web Application
+            </div>
+        </center>
+    </div>
 
     <div class="row">
         <div style="padding: 30px 30px 30px;" class="column-md-6 center">
             <div class="card">
                 <div class="card-content white-text">
-                    <h4 class="card-title" style="color:black;">Daily Horoscope Web Application</h4>
                     <h3 class="card-title" style="color:black;">Login</h3>
                     {{#if error}}
                     <div class="alert error-message">{{message}}</div>
@@ -37,8 +42,12 @@ use handlebars to insert that variable as an image into the html sign-up documen
                 </div>
             </div>
         </div>
+        <div class="card-panel white lighten-2 credit">
+            <span>Photo credit: NASA</span>
+        </div>
 
-        <footer>Photo credit: NASA</footer>
+
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript">
             $.ajax({

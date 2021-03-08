@@ -3,7 +3,9 @@ const app = require("express");
 
 module.exports = function(app) {
 
-    app.get("/api/message/", function(req, res) {
+
+    app.get("/message", function(req, res) {
+
         console.log("/api/posts call made");
         var query = {};
         if (req.query.user_id) {
@@ -27,11 +29,14 @@ module.exports = function(app) {
         });
     });
 
-    app.post("/api/message/", function(req, res) {
-        console.log("Creating a post");
+    app.post("/message/create", function(req, res) {
+        const id = req.params.id
+        console.log(req.body);
+        
         db.Post.create({
             body: req.body.body,
-            UserId: req.body.userId
+            id: id,
+         
         }).then(function(dbPost) {
             res.json(dbPost);
         });
