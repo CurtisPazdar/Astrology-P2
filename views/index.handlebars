@@ -1,10 +1,11 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link rel="stylesheet" href="../public/assets/style.css">
 
 <h1 style="font-size: 30px">Horoscope Time!!</h1>
 <form action="/logout?_method=DELETE" method="POST">
 
 </form>
-<h1>What's your sign?!</h1>
+<h1 style="font-size: 30px;">What's your sign?!</h1>
 
 
 
@@ -28,7 +29,7 @@
 
     <h2 style="font-size: 30px">Enter your Zodiac sign below to receive your daily horoscope:</h2>
     <nav>
-        <div class="nav-wrapper">
+        <div style="white" class="nav-wrapper">
             <form>
                 <div class="input-field">
                     <input id="search" type="search" required>
@@ -38,7 +39,7 @@
             </form>
         </div>
     </nav>
-    <button type="logout">Logout</button>
+    <button style="color:white" type="logout">Logout</button>
     <a href="../views/index.handlebars"></a>
 
     <script type="text/javascript">
@@ -54,7 +55,6 @@
             return res.json()
         }).then(data => console.log(data))
             .catch(error => console.log('ERROR'))
-
     </script>
     <a href="../public/assets/horoscope.js"></a>
 </body>
