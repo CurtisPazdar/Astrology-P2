@@ -1,20 +1,21 @@
 const app = require("express");
 var db = require("../models");
+var mysql = require("mysql");
 
 $(document).ready(function () {
   var postBodyInput = $("#post-body");
 
-  $("#post-submit").on("click", function () {
+  $("#post-submit").on("click", function (e) {
+    e.preventDefault();
+
     console.log("button was clicked");
 
     if (!postBodyInput.val().trim()) {
       return;
     }
 
-    console.log();
     var newPost = {
       body: postBodyInput.val().trim(),
-      userId: req.user.id,
     };
 
     console.log(newPost);

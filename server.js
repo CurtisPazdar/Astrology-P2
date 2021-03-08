@@ -28,7 +28,7 @@ app.use(
   session({
     secret: "keyboard cat",
     resave: true,
-    saveUnitialized: true,
+    saveUninitialized: true,
 
   })
 );
