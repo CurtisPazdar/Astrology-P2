@@ -39,21 +39,23 @@
         </div>
     </nav>
     <button type="submit">Logout</button>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
-        fetch("https://json.astrologyapi.com/v1/sun_sign_prediction/daily/:zodiacName", {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                horoscope: 'url',
-            })
-        }).then(res => {
-            return res.json()
-        }).then(data => console.log(data))
-            .catch(error => console.log('ERROR'))
 
+        const getDaily = () => {
+            $.ajax({
+                url: "https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=aquarius&day=today",
+                method: "POST",
+                dataType: "json",
+                headers: {
+                    "x-rapidapi-key": "176601b113msh6d27a4156a2d79bp177199jsna0ce92f9cd8c",
+                    "x-rapidapi-host": "sameer-kumar-aztro-v1.p.rapidapi.com",
+                    "Content-Type": "application/json",
+                },
+            }).then(function (response) {
+                console.log(response);
+            });
+        }
     </script>
-    <a href="...../public/assets/horoscope.js"></a>
+
 </body>
