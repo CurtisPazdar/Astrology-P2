@@ -5,7 +5,7 @@ module.exports = function (app) {
     res.render("index.handlebars");
   });
 
-  app.get("/messageboard/", function (req, res) {
+  app.get("/message/", function (req, res) {
     var query = {};
     db.Post.findAll({
       where: query,
@@ -26,11 +26,11 @@ module.exports = function (app) {
         user: req.user,
       };
 
-      res.render("messageboard", hbsObject);
+      res.render("message", hbsObject);
     });
   });
 
-  app.get("/messageboard/:birthSign", function (req, res) {
+  app.get("/message/:birthSign", function (req, res) {
     db.Post.findAll({
       where: {
         birthSign: req.params.birthSign,
@@ -51,7 +51,7 @@ module.exports = function (app) {
         hbPosts: posts,
         user: req.user,
       };
-      res.render("messageboard", hbsObject);
+      res.render("message", hbsObject);
     });
   });
 };
