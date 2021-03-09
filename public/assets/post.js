@@ -1,14 +1,12 @@
 const app = require("express");
 var db = require("../models");
+
 var mysql = require('mysql');
 
 
 
 
 $(document).ready(function(){
-
-
-
 
 
 
@@ -49,3 +47,4 @@ $(document).ready(function(){
 
     }
 })
+

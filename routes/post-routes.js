@@ -1,7 +1,7 @@
+
 // var db = require("../models");
 // const app = require("express");
 // var bodyParser = require('body-parser')
-
 
 
 
@@ -62,6 +62,7 @@
 //     //     db.Post.create({
 //     //         body: JSON.stringify(req.body.message),
 //     //         UserId: id
+
          
 //     //     }).then(function(dbPost) {
 //     //         console.log(dbPost)
