@@ -2,6 +2,7 @@ module.exports = function (sequelize, DataTypes) {
   var Post = sequelize.define("Post", {
     body: {
       type: DataTypes.STRING,
+      len: [1]
     },
   });
 
