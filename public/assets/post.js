@@ -3,16 +3,26 @@ var db = require("../models");
 var mysql = require('mysql');
 
 
+
+
 $(document).ready(function(){
 
+
+
+
+
+
     var postBodyInput = $("#post-body");
+
+
+ 
     
 
     $("#post-submit").on("click", function(e) {
         
         e.preventDefault();
 
-    
+        console.log(postBodyInput);
         
 
         console.log("button was clicked")
@@ -23,6 +33,7 @@ $(document).ready(function(){
 
         var newPost = {
             body: postBodyInput.val().trim(),
+            userId: userId
         }
 
         console.log(newPost);
@@ -32,7 +43,7 @@ $(document).ready(function(){
     });
 
     function submitPost(Post) {
-        app.post("/api/posts/",Post, function() {
+        app.post("/message",Post, function() {
             location.reload();
         });
 

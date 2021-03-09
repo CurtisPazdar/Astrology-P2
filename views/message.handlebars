@@ -1,27 +1,47 @@
+<a href="/" style="color:white">Daily Horoscope</a>
+
 <h1>
-    HELLO
+    Astrology Message Board
 </h1>
 
 <body>
 
-    <h2 style="font-size: 30px">message</h2>
+
     <nav>
         <div class="nav-wrapper">
-            <form action="/message/create" method="POST">
+            <form action="/message" method="POST">
                 <div class="input-field">
                     <input type="TEXT" id="post-body" name="message" value="" required>
 
                 </div>
-                <button type="submit" id="post-submit">Submit</button>
+                <button type="submit" id="post-submit" style="color:white">Submit</button>
             </form>
         </div>
     </nav>
 
+    <br>
+    <br>
+    <br>
 
-    {{#each Post}}
 
-    <p>
-        {{Post.body}}
-    </p>
+    <div class="container">
+        <ul>
+            {{#each hbPosts}}
 
-    {{/each}}
+            <li class="media list-group-item p-a">
+
+                <p style="font-size:30px; color:white">
+                    {{body}}
+                </p>
+                <p style="font-size:20px; color:white">
+                    {{User.name}}
+                </p>
+                <p style="font-size:20px; color:white">
+                    {{createdAt}}
+                </p>
+
+
+                {{/each}}
+
+        </ul>
+    </div>
