@@ -1,7 +1,7 @@
 const app = require("express");
 var db = require("../models");
 
-var mysql = require('mysql');
+var mysql = require("mysql");
 
 $(document).ready(function () {
   var postBodyInput = $("#post-body");
@@ -9,9 +9,7 @@ $(document).ready(function () {
   $("#post-submit").on("click", function (e) {
     e.preventDefault();
 
-
     var postBodyInput = $("#post-body");
-    
 
     if (!postBodyInput.val().trim()) {
       return;
@@ -30,12 +28,5 @@ $(document).ready(function () {
     app.post("/api/posts/", Post, function () {
       location.reload();
     });
-
-    function submitPost(Post) {
-        app.post("/api/posts/",Post, function() {
-            location.reload();
-        });
-
-    }
-})
-
+  }
+});

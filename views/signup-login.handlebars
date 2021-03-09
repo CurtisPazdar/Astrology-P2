@@ -24,12 +24,12 @@ use handlebars to insert that variable as an image into the html sign-up documen
             <div class="card">
                 <div class="card-content white-text">
                     <h3 class="card-title" style="color:black;">Login</h3>
-                    {{#if error}}
-                    <div class="alert error-message">{{message}}</div>
+                    {{#if messages.error}}
+                    <div class="alert error-message" style="color: red;">{{messages.error}}</div>
                     {{/if}}
                     <form action="/login" method="POST">
                         <div>
-                            <label for="email">Name</label>
+                            <label for="email">Email</label>
                             <input type="email" name="email" id="email" required>
                         </div>
                         <div>
