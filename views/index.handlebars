@@ -5,10 +5,12 @@
 
 <a href="/message" style="color:white">Posts</a>
 
-<form action="/logout?_method=delete" method="POST"><button type="submit" id="logoutBtn">Logout</button></form>
+<form action="/logout?_method=delete" method="POST">
+    <button style="color:white" type="submit" id="logoutBtn">Logout</button>
+</form>
 
 
-<h1 style="font-size: 30px">Horoscope Time!!</h1>
+
 {{!-- <form action="/logout?_method=DELETE" method="POST"> --}}
 
 </form>
@@ -45,7 +47,10 @@
         </div>
     </nav>
 
-    <button type="submit" id="getHoro">Submit</button>
+    <button style="color:white" type="submit" id="getHoro">Submit</button>
+    <div class="container">
+        <p id="dailyHoroscope"></p>
+    </div>
     <div class="container">
         <p id="dailyHoroscope"></p>
     </div>

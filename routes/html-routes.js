@@ -1,12 +1,9 @@
 const db = require("../models");
-
 module.exports = function (app) {
   app.get("/", function (req, res) {
     res.render("index.handlebars");
   });
-
   // app.get("/message", function (req, res) {
-
   //   db.Post.findAll({
   //     include: [
   //       db.User,
@@ -44,20 +41,15 @@ module.exports = function (app) {
           hbPosts: posts,
           user: req.user,
         };
-
         res.render("message", hbsObject);
       });
     });
   };
-
   getPosts();
-
   app.post("/message/", function (req, res) {
     const id = req.user.id;
-
     console.log(JSON.stringify(req.body));
     console.log(typeof id);
-
     db.Post.create({
       body: JSON.stringify(req.body.message),
       UserId: id,

@@ -14,10 +14,6 @@ module.exports = (app) => {
     res.render("signup-login.handlebars");
   });
 
-  app.get("/message", checkAuthenticated, (req, res) => {
-    res.render("message.handlebars");
-  });
-
   app.post(
     "/login",
     passport.authenticate("local", {

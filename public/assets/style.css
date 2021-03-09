@@ -49,13 +49,10 @@ body {
   h2 {
     font-size: 15px !important;
   }
-
   #dailyHoroscope {
     font-size: 15px !important;
   }
-
-}
-
-p {
-  font-size: 15px !important;
+  p {
+    font-size: 15px impo !important;
+  }
 }
