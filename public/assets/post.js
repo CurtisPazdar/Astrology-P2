@@ -1,9 +1,11 @@
 const app = require("express");
 var db = require("../models");
+
 var mysql = require('mysql');
 
 
 $(document).ready(function(){
+
 
     var postBodyInput = $("#post-body");
     
@@ -38,3 +40,4 @@ $(document).ready(function(){
 
     }
 })
+

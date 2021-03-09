@@ -2,10 +2,12 @@
 <link rel="stylesheet" href="../public/assets/style.css">
 
 {{!-- this controls the logout function of the logout button --}}
+
 <form action="/logout?_method=delete" method="POST"><button type="submit" id="logoutBtn">Logout</button></form>
 
+
 <h1 style="font-size: 30px">Horoscope Time!!</h1>
-<form action="/logout?_method=DELETE" method="POST">
+{{!-- <form action="/logout?_method=DELETE" method="POST"> --}}
 
 </form>
 <h1 style="font-size: 30px;">What's your sign?!</h1>
@@ -40,10 +42,12 @@
             </form>
         </div>
     </nav>
+
     <button type="submit" id="getHoro">Submit</button>
     <div class="container">
         <p id="dailyHoroscope"></p>
     </div>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">

@@ -30,6 +30,7 @@ module.exports = function(app) {
     });
 
     app.post("/message/create", function(req, res) {
+
         const id = req.user.id
         console.log(req.body);
         console.log(typeof id);
